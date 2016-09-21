@@ -132,15 +132,231 @@ var message = (login == 'Vasya') ? 'Hello!':
 var hour = 12 ;
 isWeekend = true;
 if (hour < 10 || hour > 18 || isWeekend) {alert( 'Not working!!');}*/
-var age = 15;
+/*var age = 15;
 if (age >= 14 && age <= 90) {
     alert('Between 14 and 90');
 }
 var age1 = 2;
-if (age1 <= 14 || age1 >= 90) {
+if (age1 < 14 || age1 > 90) {
     alert('Not between 14 and 90');
-}
-var age2 = 2;
-if (age2 <= 14 || age2 >= 90) {
+}*/
+/*var age2 = 80;
+if (!(age2 >= 14) || !(age2 <= 90)) {
     alert('Not between 14 and 90');
+}*/
+/*
+for (var i =2; i <10; i++) {
+    if (i % 2 == 0) {
+        alert('Only even numbers from 2 to 10 - ' + i);
+    }
+}*/
+/*
+for (var i=0; i < 3; i++) {
+    alert( 'number ' + i + '!'); // rewrite with WHILE:
+}*/
+/*
+var i = 0;
+while (i <3) {
+    alert( 'number ' + i + '!');
+    i++;
+}*/
+
+//My variant:
+/*for ( var num = prompt('Please write number larger than 100', 0); num <= 100 && num != null;) {
+    num = prompt('Please write number larger than 100', 0);
+}*/
+// Correct variant:
+/*
+var num;
+do{
+    num = prompt('Please write number larger than 100', 0);
+} while (num <= 100 && num != null);
+*/
+// Вывести простые числа от 2 до 10:
+/*
+nextPrime:
+for (var i =2; i < 10; i++){
+    for( var j =2; j < i; j++) {
+        if (i % j == 0) continue nextPrime;
+    }
+    alert ('Prime numbers: ' + i);
 }
+*/
+
+// Task is rewrite next to "if" :
+/*var browser = prompt('What is your brouser?', '')
+switch (browser) {
+    case 'IE':
+        alert('Oh, yea you have IE' );
+        break;
+    case 'Chrome':
+    case 'Firefox':
+    case 'Safari':
+    case 'Opera':
+        alert('Yes, we support this browsers as well' );
+        break;
+    default:
+        alert('We hope everything is good in your browser as well!' );
+}*/
+/*
+var browser = prompt('What is your browser?', '');
+if (browser == 'IE' ) {
+    alert('Oh, yea you have IE' );
+} else if (browser == 'Chrome'
+|| browser == 'Firefox'
+|| browser == 'Safari'
+|| browser == 'Opera') {
+    alert('Yes, we support this browsers as well' );
+} else {
+    alert('We hope everything is good in your browser as well!' );
+}*/
+// Task is rewrite next to "SWITCH" :
+/*
+var a = +prompt('a?', '');
+if (a == 0) {
+    alert(0);
+}
+if (a == 1) {
+    alert(1);
+}
+if (a == 2 || a == 3) {
+    alert( '2,3');
+}*/
+/*
+var a = +prompt('a?', 0);
+switch (a) {
+    case 0:
+        alert(0);
+        break;
+    case 1:
+        alert(1);
+        break;
+    case 2:
+    case 3:
+        alert('2,3');
+        break;
+}*/
+// FUNCTIONs names
+/*showMessage()
+getAge()
+calcD()
+createForm()
+checkPermission()*/
+/*
+function showMessage() {
+    var message = 'Hello, I am Vasya'; // local variable
+    alert( message);
+}
+showMessage();
+alert( message); // error*/
+/*function count() {
+    for ( var i = 0; i < 3; i++) {
+        var j = i * 2;
+    }
+    alert( i ); //3
+    alert( j ); //4
+}
+count();*/
+/*
+function showMessage(from, text) {
+    from = '**' + from + '**';
+    text = text || 'text aren\'t present';
+    alert( from + ': ' + text);
+}
+var from = 'Masha';
+showMessage(from, 'Hello!');
+alert( from);
+showMessage('Daniil', 'Hello!');
+showMessage('Luba');*/
+/*
+function checkAge(age) {
+    if (age > 18) {
+        return true;
+    }
+        return confirm('Do you parents allow?');  // without 'else' works the same
+    }
+var age = prompt('How old are you?');
+if (checkAge(age)) {
+    alert( 'Access granted.');
+} else {
+    alert('Access denied');
+}
+*/
+// rewrite with " ? " and " || " :
+/*function checkAge(age) {
+    if ( age > 18) {
+        return true;
+    } else {
+        return confirm('Do you parents allow?');
+    }
+}*/
+//var age = prompt('How old are you?');
+/*function checkAge(age) {
+    return (age > 18) ? true: confirm('Do you parents allow?');
+}*/
+/*
+function checkAge(age) {
+    return (age > 18) || confirm('Do you parents allow?');
+}
+if (checkAge(age)) {
+    alert( 'Access granted.');
+} else {
+    alert('Access denied');
+}*/
+/*function min(a,b) {
+    if (a < b) {
+        alert (a);
+    } else {
+        return b;
+    }
+}
+min(2,5);*/
+/*
+function min(a,b) {
+    return (a < b ) ? a : b;
+}
+min(a,b);*/
+
+/*
+// X^n^m
+/!*function pow( x, n, m) {
+    var result1 = x;
+    for (var i = 1; i < n; i++){
+        result1 *= x;
+        var result2 = result1;
+        for ( var j = 1; j < m; j++) {
+            result2 *= result1;
+        }
+    }
+    return result2;
+}
+var x = prompt('Please enter number x:', '' );
+var n = prompt('Please enter degree n:', '');
+var m = prompt('Please enter degree m:', '');
+if (n <= 1) {
+    alert('Degree ' + n + ' isn\'t supported, please enter integer degree grater than 1');
+} else if (m <= 1) {
+    alert('Degree ' + m + ' isn\'t supported, please enter integer degree grater than 1');
+} else {
+    alert( pow(x, n, m));
+}*!/
+alert ( pow ); // will show a code of function pow
+*/
+
+/*function sayHi () {  // crete function and put in variable sayHi
+    alert('Hi!');
+}
+var func = sayHi; // copy function in variable func
+                  // ( sayHi() would put it's results in func - undefined
+                  // ( undefined - because  inside sayHi there are no return) !!!
+func(); // Hi
+sayHi (); // Hi
+alert(sayHi);
+sayHi = null; // value of variable could be changed
+sayHi();*/
+
+/*
+var sayHi = function(person) {
+    alert('Hello, ' + person );
+} ;
+sayHi('Kolya');*/
