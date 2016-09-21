@@ -1,13 +1,7 @@
 /**
  * Created by marina on 12.09.16.
  */
-/*
-a = 25;//find usages
-function () {
-    k = 4;
-} //  Code -> Surround with
-*/
-// Ctrl+Shift+N -> navigate
+                                    // PROMPT    CONFIRM    ALERT
 /*
 var userName = prompt('What is your name?', name);
 var isUserName = confirm('Is your name ' + userName + '?');
@@ -25,6 +19,7 @@ if (year == 2011) {
 } else {
     alert('it\'s not correct!' );
 }*/
+                                    // IF    ELSE IF     ELSE
 /*
 var year = prompt('Which year Nina was born?');
 if (year<2011) {
@@ -41,7 +36,9 @@ var age = prompt('How old are you?', '');*/
 } else {
     access = false;
 }
-alert(access);*/ //  with " ? " it's could be done shoter:
+alert(access);*/
+                                               // ' ? '
+//  with " ? " it's could be done shoter:
 /*
 access = (age> 14) ? true : false;*/
 /*var officialJsName = prompt('What is official JS name?', '');
@@ -129,6 +126,7 @@ var message = (login == 'Vasya') ? 'Hello!':
     (login =='') ? 'No login':
     '';*/
 /*
+                                              //  && ||
 var hour = 12 ;
 isWeekend = true;
 if (hour < 10 || hour > 18 || isWeekend) {alert( 'Not working!!');}*/
@@ -144,22 +142,23 @@ if (age1 < 14 || age1 > 90) {
 if (!(age2 >= 14) || !(age2 <= 90)) {
     alert('Not between 14 and 90');
 }*/
-/*
-for (var i =2; i <10; i++) {
-    if (i % 2 == 0) {
-        alert('Only even numbers from 2 to 10 - ' + i);
-    }
-}*/
-/*
-for (var i=0; i < 3; i++) {
-    alert( 'number ' + i + '!'); // rewrite with WHILE:
-}*/
-/*
-var i = 0;
-while (i <3) {
-    alert( 'number ' + i + '!');
-    i++;
-}*/
+                                               //FOR WHILE
+    /*
+    for (var i =2; i <10; i++) {
+        if (i % 2 == 0) {
+            alert('Only even numbers from 2 to 10 - ' + i);
+        }
+    }*/
+    /*
+    for (var i=0; i < 3; i++) {
+        alert( 'number ' + i + '!'); // rewrite with WHILE:
+    }*/
+    /*
+    var i = 0;
+    while (i <3) {
+        alert( 'number ' + i + '!');
+        i++;
+    }*/
 
 //My variant:
 /*for ( var num = prompt('Please write number larger than 100', 0); num <= 100 && num != null;) {
@@ -182,7 +181,7 @@ for (var i =2; i < 10; i++){
     alert ('Prime numbers: ' + i);
 }
 */
-
+                                               // SWITCH
 // Task is rewrite next to "if" :
 /*var browser = prompt('What is your brouser?', '')
 switch (browser) {
@@ -236,7 +235,7 @@ switch (a) {
         alert('2,3');
         break;
 }*/
-// FUNCTIONs names
+                                          // FUNCTIONs names
 /*showMessage()
 getAge()
 calcD()
@@ -269,6 +268,7 @@ alert( from);
 showMessage('Daniil', 'Hello!');
 showMessage('Luba');*/
 /*
+                                                  // RETURN
 function checkAge(age) {
     if (age > 18) {
         return true;
@@ -318,7 +318,7 @@ function min(a,b) {
 min(a,b);*/
 
 /*
-// X^n^m
+                                    // X^n^m
 /!*function pow( x, n, m) {
     var result1 = x;
     for (var i = 1; i < n; i++){
@@ -343,7 +343,7 @@ if (n <= 1) {
 alert ( pow ); // will show a code of function pow
 */
 
-/*function sayHi () {  // crete function and put in variable sayHi
+/*function sayHi () {               // crete function and put in variable sayHi
     alert('Hi!');
 }
 var func = sayHi; // copy function in variable func
@@ -356,7 +356,101 @@ sayHi = null; // value of variable could be changed
 sayHi();*/
 
 /*
+ sayHi('Kolya');        // DOESN'T work BEFORE Function Expression
 var sayHi = function(person) {
     alert('Hello, ' + person );
 } ;
 sayHi('Kolya');*/
+/*
+                                               //Function Expression
+ var sum = function(a,b) {
+ return a +b;
+ }
+// Function Declaration
+ sum(a,b)              // works
+function sum(a,b) {
+    return a + b;
+}
+*/
+                                                  //new Function
+/*
+var sum = new Function('a,b', ' return a+b; ');
+alert(sum(1,2));
+*/
+/*
+var age = prompt('How old are you?');
+var sayHi;                // if Function Declaration -> error because it would be inner variable of function
+if (age >= 18) {
+    sayHi = function () { // Function Declaration -> function sayHi(){
+        alert('You are welcom!');
+    }
+} else {
+    sayHi = function () {
+        alert('Not allowed before 18!');
+    }
+}
+sayHi();
+*/
+/*
+function ask(guestion, yes, no) {
+    if (confirm(question)) yes()
+    else no();
+}
+ask(
+    'Do you agree?',
+    function () {alert('You agreed.'); },          //anonymous function
+    function () { alert('You diclaim'); }
+);*/
+                                               //Recursion
+/*function pow(x, n) {
+    if (n != 1) {
+        return x * pow(x, n - 1);
+    } else {
+        return x;
+    }
+}
+alert( pow(2, 3));*/
+/*function sumTo(n) {               //with FOR
+    var result = n;
+    for( var i = 1; i < n; i++) {
+        result += i;
+    } return result;
+}
+alert( sumTo(100));   */
+
+
+/*function sumTo(n) {                   // with Recursion
+    if(n == 1) return 1;
+    return n + sumTo(n -1);
+   }
+alert( sumTo(100));*/
+
+
+/*function sumTo(n) {           //with formula sum of arithmetic progression
+       return n * (n +1) / 2;
+}
+alert( sumTo(100)); */
+                                 // NAMED FUNCTION EXPRESSION
+// var f = function() {};  ->
+//   var f = function sayHy() {}
+/*
+var f = function sayHi(name) {
+    sayHi = 'test';            // impossible to rewrite
+    alert( sayHi);            // works inside function
+}
+alert( sayHi); // error outside func*/
+                     //1   using with Recursion
+/*function f(n) {
+    return n ? n * f(n - 1) : 1; // trying find f, but it's g now!!
+}
+var g = f;
+f = null;
+alert( g(5));   // ERROR !!*/
+                    //2
+/*
+var f = function factorial(n) {
+    return n ? n * factorial(n - 1) : 1;
+}
+var g = f;
+f = null;
+alert( g(5)); // 120, WORKS !!*/
